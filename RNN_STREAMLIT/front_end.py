@@ -142,10 +142,6 @@ if st.button("Submit"):
 
 
 
-    print("kick data1")
-    print(type(kick_data))
-    print("kick data2")
-    print(type(kick_data2))
 
     #Concatenar los outputs en 3 strings.
     #orden-> Charles, kick, snare
@@ -174,8 +170,8 @@ if st.button("Submit"):
 
 
 
-print(bass)
-stream=save_melody(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
+
+    stream=save_melody(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
 
 
 
