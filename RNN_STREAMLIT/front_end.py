@@ -2,13 +2,14 @@ import os
 os.environ['SDL_AUDIODRIVER'] = 'directsound'
 
 import streamlit as st
-from PIL import Image
-import numpy as np
-import sounddevice as sd
+#from PIL import Image
+#import numpy as np
+#import sounddevice as sd
 import requests
 import music21 as m21
 from pydub import AudioSegment
-from midi2audio import FluidSynth
+#from midi2audio import FluidSynth
+import fluidsynth
 
 import time
 
@@ -54,6 +55,33 @@ def save_melody(melody, step_duration=0.25,format='midi', file_name= 'test.mid')
          stream.write(format, file_name)
 
          return stream
+
+
+def save_melody2(melody, step_duration=0.25, format='midi', file_name='test.mid'):
+    stream = m21.stream.Stream()
+    start_symbol = None
+    step_counter = 1
+
+    for i, symbol in enumerate(melody):
+        if symbol != "_":
+            if start_symbol is not None:
+                quarter_length_duration = step_duration * step_counter
+                if start_symbol == 'r':
+                    m21_event = m21.note.Rest(quarterLength=quarter_length_duration)
+                else:
+                    m21_event = m21.note.Note(int(start_symbol), quarterLength=quarter_length_duration)
+
+                stream.append(m21_event)
+
+            step_counter = 1
+            start_symbol = symbol
+
+        else:
+            step_counter += 1
+
+    stream.write(format, file_name)
+
+    return stream
 
 
 '''
@@ -175,7 +203,10 @@ if st.button("Submit"):
 
     #orden-> Charles, kick, snare
     #api:
-    url="http://127.0.0.1:8000/predict"
+
+
+    #url="http://127.0.0.1:8000/predict"
+    url="https://rnnmusicgenerator-pdjk6hbk2a-ew.a.run.app/predict"
     params={"CH":charles_str,"CK":charles_str,"SN":snare_str,"T":st.session_state["temperature"]}
 
     query=requests.get(url,params).json()
@@ -184,7 +215,7 @@ if st.button("Submit"):
     for key, value in query.items():
         bass.append(value)
 
-    stream=save_melody(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
+    stream=save_melody2(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
 
     FluidSynth(
         sound_font='/Users/Cris/code/miguimorell/RNN_STREAMLIT/RNN_STREAMLIT/GeneralUser GS v1.471.sf2',
