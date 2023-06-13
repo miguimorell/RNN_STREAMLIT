@@ -216,7 +216,7 @@ if st.button("Submit"):
         bass.append(value)
 
     stream=save_melody2(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
-
+    """
     FluidSynth(
         sound_font='/Users/Cris/code/miguimorell/RNN_STREAMLIT/RNN_STREAMLIT/GeneralUser GS v1.471.sf2',
         sample_rate=48000,
@@ -226,14 +226,9 @@ if st.button("Submit"):
     audio_bytes = audio_file.read()
 
     st.audio(audio_bytes)
+    """
 
-
-
-
-
-
-
-
+"""
 ######################################
 # Load the sound files
 kick_sound = AudioSegment.from_wav('Kick.wav')
@@ -304,3 +299,4 @@ if st.button('Reproducir Sonidos'):
         'Hi-Hat': st.session_state['charles']
     }
     play_sounds(sounds)
+"""
