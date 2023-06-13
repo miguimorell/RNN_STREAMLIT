@@ -7,6 +7,8 @@ import numpy as np
 import sounddevice as sd
 import requests
 import music21 as m21
+import soundfile as sf
+
 
 
 import time
@@ -210,7 +212,7 @@ for sound_name, sound_list in sounds2_second_block.items():
 
 
 
-"""
+
 ######################################
 
 # Cargar los archivos de sonido
@@ -241,7 +243,9 @@ def play_sounds(sounds):
 
 # Botón para reproducir los sonidos seleccionados
 if st.button('Reproducir Sonidos'):
+    sounds = {
+        'Kick': kick_data + kick_data2,
+        'Snare': snare_data + snare_data2,
+        'Hi-Hat': charles_data + charles_data2
+    }
     play_sounds(sounds)
-"""
-
-#####################################
