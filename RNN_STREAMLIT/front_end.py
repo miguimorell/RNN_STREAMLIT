@@ -2,13 +2,14 @@ import os
 os.environ['SDL_AUDIODRIVER'] = 'directsound'
 
 import streamlit as st
-from PIL import Image
-import numpy as np
-import sounddevice as sd
+#from PIL import Image
+#import numpy as np
+#import sounddevice as sd
 import requests
 import music21 as m21
 from pydub import AudioSegment
-from midi2audio import FluidSynth
+#from midi2audio import FluidSynth
+import fluidsynth
 
 import time
 
