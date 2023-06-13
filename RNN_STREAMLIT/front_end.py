@@ -215,7 +215,19 @@ if st.button("Submit"):
     for key, value in query.items():
         bass.append(value)
 
-    stream=save_melody2(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
+
+    if st.button('Download MIDI'):
+
+        # Save the melody as a MIDI file
+        stream=save_melody2(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
+
+        # Provide the file path and a custom name for the download
+        st.download_button(
+            label='Download',
+            data='test.mid',
+            file_name='custom_filename.mid',
+        )
+
     """
     FluidSynth(
         sound_font='/Users/Cris/code/miguimorell/RNN_STREAMLIT/RNN_STREAMLIT/GeneralUser GS v1.471.sf2',
