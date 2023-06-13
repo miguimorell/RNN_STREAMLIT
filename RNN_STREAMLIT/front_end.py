@@ -15,8 +15,8 @@ import time
 from playsound import playsound
 
 
-
 def save_melody(melody, step_duration=0.25,format='midi', file_name= 'test.mid'):
+
          #create a music 21 stream
          stream= m21.stream.Stream()
 
@@ -54,6 +54,7 @@ def save_melody(melody, step_duration=0.25,format='midi', file_name= 'test.mid')
          stream.write(format, file_name)
 
          return stream
+
 
 '''
 # Grove-Nator 3000
@@ -109,6 +110,15 @@ for sound_name, sound_list in sounds2_second_block.items():
 
 resultados_seleccionados1 = []
 resultados_seleccionados2 = []
+
+#Botton to specify temperature
+st.write("¨Temperature¨ is a parameter that adds randomness to the generation: Numbers closer to 0 make the model more deterministic. Numbers closer to 1 makes the generation more unpredictable.")
+temperature = st.slider('Select a value for the temperature', 0.0, 1.0, step=0.1)
+if st.button('Save value'):
+    st.session_state['temperature']=temperature
+    st.write('Value saved correctly!')
+
+
 
 
 # Botón Submit
@@ -166,7 +176,7 @@ if st.button("Submit"):
     #orden-> Charles, kick, snare
     #api:
     url="http://127.0.0.1:8000/predict"
-    params={"CH":charles_str,"CK":charles_str,"SN":snare_str}
+    params={"CH":charles_str,"CK":charles_str,"SN":snare_str,"T":st.session_state["temperature"]}
 
     query=requests.get(url,params).json()
 
@@ -185,6 +195,13 @@ if st.button("Submit"):
     audio_bytes = audio_file.read()
 
     st.audio(audio_bytes)
+
+
+
+
+
+
+
 
 ######################################
 # Load the sound files
