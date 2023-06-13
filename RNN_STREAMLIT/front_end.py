@@ -79,12 +79,12 @@ def save_melody2(melody, step_duration=0.25, format='midi', file_name='./test.mi
         else:
             step_counter += 1
 
-    stream=stream.write(format, file_name)
+    stream.write(format, file_name)
     musica = open('test.mid',"rb")
     midi_file = 'test.mid'
     audio_bytes = musica.read()
     st.audio(audio_bytes)
-    return midi_file
+    return "test.mid"
 
 
 '''
@@ -222,7 +222,7 @@ if st.button("Submit"):
     if st.button('Download MIDI'):
 
         # Save the melody as a MIDI file
-        st.session_state["melody"]=save_melody2(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
+        path=save_melody2(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
         st.write(st.session_state["melody"])
         musica = open('./test.mid',"rb")
         audio_bytes = musica.read()
@@ -230,8 +230,8 @@ if st.button("Submit"):
         # Provide the file path and a custom name for the download
         st.download_button(
             label='Download',
-            data='st.session_state["melody"]',  # Provide the file path
-            file_name='custom_filename.mid',
+            data=path,  # Provide the file path
+            file_name=path,
             mimi='audio/midi'
         )
 
