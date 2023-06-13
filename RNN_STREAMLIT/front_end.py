@@ -223,6 +223,7 @@ if st.button("Submit"):
 
         # Save the melody as a MIDI file
         st.session_state["melody"]=save_melody2(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
+        st.write(st.session_state["melody"])
         musica = open('./test.mid',"rb")
         audio_bytes = musica.read()
         st.audio(audio_bytes)
