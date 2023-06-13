@@ -79,9 +79,9 @@ def save_melody2(melody, step_duration=0.25, format='midi', file_name='test.mid'
         else:
             step_counter += 1
 
-    stream.write(format, file_name)
+    musica = stream.write(format, file_name)
 
-    return stream
+    return musica
 
 
 '''
@@ -224,8 +224,9 @@ if st.button("Submit"):
         # Provide the file path and a custom name for the download
         st.download_button(
             label='Download',
-            data='test.mid',
+            data=stream,
             file_name='custom_filename.mid',
+            mime='audio/midi'
         )
 
     """
