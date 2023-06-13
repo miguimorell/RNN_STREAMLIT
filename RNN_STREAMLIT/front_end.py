@@ -228,9 +228,9 @@ if st.button("Submit"):
         # Provide the file path and a custom name for the download
         st.download_button(
             label='Download',
-            data=musica,
+            data='test.mid',  # Provide the file path
             file_name='custom_filename.mid',
-            mime='audio/midi'
+            mimi='audio/midi'
         )
 
     """
