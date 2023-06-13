@@ -219,12 +219,12 @@ if st.button("Submit"):
     if st.button('Download MIDI'):
 
         # Save the melody as a MIDI file
-        stream=save_melody2(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
+        st.session_state["stream"]=save_melody2(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
 
         # Provide the file path and a custom name for the download
         st.download_button(
             label='Download',
-            data=stream,
+            data=st.session_state["stream"],
             file_name='custom_filename.mid',
             mime='audio/midi'
         )
