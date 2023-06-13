@@ -79,12 +79,12 @@ def save_melody2(melody, step_duration=0.25, format='midi', file_name='./test.mi
         else:
             step_counter += 1
 
-    stream.write(format, file_name)
+    stream.write(format, fp=file_name)
     musica = open('test.mid',"rb")
     midi_file = 'test.mid'
     audio_bytes = musica.read()
     st.audio(audio_bytes)
-    return "test.mid"
+    return file_name
 
 
 '''
