@@ -7,15 +7,14 @@ import numpy as np
 import sounddevice as sd
 import requests
 import music21 as m21
-import soundfile as sf
-
-
+from pydub import AudioSegment
+from midi2audio import FluidSynth
 
 import time
 
 from playsound import playsound
 
-url="http://127.0.0.1:8000/predict"
+
 
 def save_melody(melody, step_duration=0.25,format='midi', file_name= 'test.mid'):
          #create a music 21 stream
@@ -153,6 +152,10 @@ if st.button("Submit"):
     snare=snare_data+snare_data2
     charles=charles_data+charles_data2
 
+    st.session_state['kick'] = kick
+    st.session_state['snare'] = snare
+    st.session_state['charles'] = charles
+
     kick_str = ",".join(str(elemento) for elemento in kick)
 
     snare_str = ",".join(str(elemento) for elemento in snare)
@@ -162,6 +165,7 @@ if st.button("Submit"):
 
     #orden-> Charles, kick, snare
     #api:
+    url="http://127.0.0.1:8000/predict"
     params={"CH":charles_str,"CK":charles_str,"SN":snare_str}
 
     query=requests.get(url,params).json()
@@ -170,82 +174,85 @@ if st.button("Submit"):
     for key, value in query.items():
         bass.append(value)
 
-
-
-
     stream=save_melody(bass, step_duration=0.25,format='midi', file_name= 'test.mid')
 
+    FluidSynth(
+        sound_font='/Users/Cris/code/miguimorell/RNN_STREAMLIT/RNN_STREAMLIT/GeneralUser GS v1.471.sf2',
+        sample_rate=48000,
+        ).midi_to_audio('/Users/Cris/code/miguimorell/RNN_STREAMLIT/RNN_STREAMLIT/test.mid', 'bass3.wav')
 
+    audio_file = open('bass3.wav', 'rb')
+    audio_bytes = audio_file.read()
 
-
-
-
-
-
-
-"""
-# Mostrar los resultados seleccionados para el primer bloque
-st.write('Resultados seleccionados para el primer bloque:')
-for sound_name, sound_list in sounds2.items():
-    st.write(f'{sound_name}: {sound_list}')
-
-# Mostrar los resultados seleccionados para el segundo bloque
-st.write('Resultados seleccionados para el segundo bloque:')
-for sound_name, sound_list in sounds2_second_block.items():
-    st.write(f'{sound_name}: {sound_list}')
-
-"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    st.audio(audio_bytes)
 
 ######################################
+# Load the sound files
+kick_sound = AudioSegment.from_wav('Kick.wav')
+snare_sound = AudioSegment.from_wav('Snare.wav')
+hihat_sound = AudioSegment.from_wav('Hihat.wav')
 
-# Cargar los archivos de sonido
-kick_sound, _ = sf.read('Kick.wav')
-snare_sound, _ = sf.read('Snare.wav')
-hihat_sound, _ = sf.read('Hihat.wav')
-
-# Función para reproducir los sonidos seleccionados
+# Function to play the selected sounds
 def play_sounds(sounds):
-    rhythm = np.zeros(8, dtype=bool)
-    for sound_name, sound_list in sounds2.items():
+    combined_kick = []
+    combined_snare = []
+    combined_charles = []
+    combined_sounds = []
+    for sound_name, sound_list in sounds.items():
         for i, checkbox in enumerate(sound_list):
             if checkbox:
-                if sound_name == 'K':
-                    rhythm[i] = True
-                elif sound_name == 'S':
-                    rhythm[i + 8] = True
-                elif sound_name == 'HH':
-                    rhythm[i] = True
-                    rhythm[i + 8] = True
+                if sound_name == 'Kick':
+                    combined_kick.append(kick_sound)
+                elif sound_name == 'Snare':
+                    combined_snare.append(snare_sound)
+                elif sound_name == 'Hi-Hat':
+                    combined_charles.append(hihat_sound)
+            elif checkbox == False:
+                if sound_name == 'Kick':
+                    combined_kick.append(0)
+                elif sound_name == 'Snare':
+                    combined_snare.append(0)
+                elif sound_name == 'Hi-Hat':
+                    combined_charles.append(0)
 
-    if rhythm.any():
-        if rhythm[:8].any():
-            sf.play(kick_sound)
-        if rhythm[8:].any():
-            sf.play(snare_sound)
-            sf.play(hihat_sound)
+    output_file = 'drums.wav'
+    for i in range(0,len(combined_charles)):
+        if combined_kick[i] == 0 and combined_snare[i] == 0 and combined_charles[i] == 0:
+            pass
+        elif combined_kick[i] == 0 and combined_snare[i] == 0:
+            combined_sounds.append(combined_charles[i])
+        elif combined_charles[i] == 0 and combined_snare[i] == 0:
+            combined_sounds.append(combined_kick[i])
+        elif combined_kick[i] == 0 and combined_charles[i] == 0:
+            combined_sounds.append(combined_snare[i])
+        elif combined_kick[i] == 0:
+            combined_sounds.append(combined_snare[i].overlay(combined_charles[i]))
+        elif combined_snare[i] == 0:
+            combined_sounds.append(combined_kick[i].overlay(combined_charles[i]))
+        elif combined_charles[i] == 0:
+            combined_sounds.append(combined_kick[i].overlay(combined_snare[i]))
+        else:
+            combined_sounds.append(combined_kick[i].overlay(combined_snare[i]).overlay(combined_charles[i]))
 
-# Botón para reproducir los sonidos seleccionados
+    combined_audio = sum(combined_sounds)
+
+    # Speed up the audio segment
+    #speed_factor = 1  # Increase the speed by 1.5 times
+    #sped_up_audio = combined_audio.speedup(playback_speed=speed_factor)
+
+    combined_audio.export(output_file, format='wav')
+
+    audio_file = open('drums.wav', 'rb')
+    audio_bytes = audio_file.read()
+
+    st.audio(audio_bytes)
+
+
+# Button to play the selected sounds
 if st.button('Reproducir Sonidos'):
     sounds = {
-        'Kick': kick_data + kick_data2,
-        'Snare': snare_data + snare_data2,
-        'Hi-Hat': charles_data + charles_data2
+        'Kick': st.session_state['kick'],
+        'Snare': st.session_state['snare'],
+        'Hi-Hat': st.session_state['charles']
     }
     play_sounds(sounds)
