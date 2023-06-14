@@ -8,6 +8,8 @@ from create_checkbox import create_checkbox
 from insert_temperature import insert_temperature
 from check_checkbox import check_checkbox
 from call_api import call_api
+from PIL import Image
+
 
 '''
 # BASS-BUDY
@@ -20,12 +22,12 @@ from call_api import call_api
 
 '''
 
-
+image1=Image.open("image1.png")
 # ADD IMAGE LATERAL LEFT
-st.sidebar.image('image1.png', use_column_width=True)
+st.sidebar.image(image1, use_column_width=True)
 
 # ADD IMAGE LATERAL RIGHT
-st.sidebar.image('image1.png', use_column_width=True)
+#st.sidebar.image('image1.png', use_column_width=True)
 
 
 
