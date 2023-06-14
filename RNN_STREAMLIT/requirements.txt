@@ -4,3 +4,4 @@ requests
 music21
 pydub
 fluidsynth
+PIL
