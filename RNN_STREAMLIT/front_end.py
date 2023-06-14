@@ -47,7 +47,8 @@ st.write("----------------------------------------------------------------------
 
 
 #List of sounds, block of boxes for the two groups of 16th notes.
-sounds_first_block = create_checkbox("Enter the drums for the first bar:","1")
+
+sounds_first_block = create_checkbox("**Enter the drums for the first bar:**", "1")
 st.write("---")
 sounds_second_block = create_checkbox("Enter the drums for the second bar:","2")
 st.write("---")
