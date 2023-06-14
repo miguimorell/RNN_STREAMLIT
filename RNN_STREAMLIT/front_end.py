@@ -5,7 +5,6 @@ from insert_temperature import insert_temperature
 from check_checkbox import check_checkbox
 from call_api import call_api
 
-
 url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_467603324-stock-illustration-p-letter-logo-letter-p.jpg'
 
 # Mostrar logo
@@ -49,6 +48,7 @@ with col2:
 
 sounds_first_block = create_checkbox("**Enter the drums for the first bar:**", "1")
 st.write("---")
+
 sounds_second_block = create_checkbox("**Enter the drums for the second bar:**","2")
 st.write("---")
 #Botton to specify temperature
@@ -97,5 +97,6 @@ if st.button("Create Bass Sound"):
     # Provide download link for the generated MIDI file
     audio_file = open(file_name, 'rb')
     audio_bytes = audio_file.read()
+
     if not st.download_button("Download MIDI File", data=audio_bytes, file_name=file_name):
         st.stop()
