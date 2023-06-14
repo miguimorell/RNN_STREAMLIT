@@ -11,9 +11,9 @@ from call_api import call_api
 from PIL import Image
 
 
-'''
-# st.header('BassBuddy')
-'''
+
+st.header('BassBuddy')
+
 
 '''
 ## Need some inspiration for your music creation?
