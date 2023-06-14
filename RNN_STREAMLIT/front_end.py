@@ -41,7 +41,7 @@ with col2:
             <b>Sick of your current bass player and want to look for a replacement?</b>
         </div>
         """, unsafe_allow_html=True)
-
+st.write(---------------------------------------------------------------------------------------------------------------)
 
 
 
