@@ -138,4 +138,9 @@ if st.session_state["Download"] == False:
 if st.session_state['Download_press'] == True:
     st.session_state['Download'] = True
     url_gif_end="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzAyOGYwN2IxOTAwOTA3MTMwOTdlYTUyOGEyY2I4YzNmNDA2MWM1NSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/M6IvtGig7gC4/giphy.gif"
-    st.image(url_gif_end, width=300)
+
+    col1,col2=st.columns(2)
+    with col1:
+        st.image(url_gif_end, width=300)
+    with col2:
+        st.image(url_gif_end, width=300)
