@@ -1,6 +1,5 @@
 import streamlit as st
 
-@st.cache
 def create_checkbox(text,key):
     #List of sounds, block of boxes for the two groups of 16th notes.
 
