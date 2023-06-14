@@ -6,7 +6,7 @@ from check_checkbox import check_checkbox
 from call_api import call_api
 
 
-url_logo ='https://i.imgur.com/UrUuryS.jpeg'
+url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_467603324-stock-illustration-p-letter-logo-letter-p.jpg'
 
 
 # Mostrar logo
