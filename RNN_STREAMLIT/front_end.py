@@ -98,4 +98,4 @@ if st.button("Create Bass Sound"):
     audio_file = open(file_name, 'rb')
     audio_bytes = audio_file.read()
     if not st.download_button("Download MIDI File", data=audio_bytes, file_name=file_name):
-        pass
+        st.stop()
