@@ -22,10 +22,10 @@ from call_api import call_api
 
 
 # ADD IMAGE LATERAL LEFT
-st.sidebar.image('/home/miguimorell/code/miguimorell/RNN_STREAMLIT/RNN_STREAMLIT/Images/image1.png', use_column_width=True)
+st.sidebar.image('~/RNN_STREAMLIT/RNN_STREAMLIT/Images/image1.png', use_column_width=True)
 
 # ADD IMAGE LATERAL RIGHT
-st.sidebar.image('/home/miguimorell/code/miguimorell/RNN_STREAMLIT/RNN_STREAMLIT/Images/image1.png', use_column_width=True)
+st.sidebar.image('~/RNN_STREAMLIT/RNN_STREAMLIT/Images/image1.png', use_column_width=True)
 
 
 
