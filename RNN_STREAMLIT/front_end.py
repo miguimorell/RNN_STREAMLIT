@@ -86,21 +86,19 @@ if st.button("Create Bass Sound"):
     #call api
     query = call_api(charles_str,kick_str,snare_str,st.session_state["temperature"])
 
-    with st.spinner('Generating Midi File...'):
 
-        bass=[]
-        for key, value in query.items():
-            bass.append(value)
+    bass=[]
+    for key, value in query.items():
+        bass.append(value)
 
-        # Save the melody as a MIDI file
-        file_name = title+'.mid'
-        save_melody2(bass, step_duration=0.25,format='midi', file_name= file_name)
+    # Save the melody as a MIDI file
+    file_name = title+'.mid'
+    save_melody2(bass, step_duration=0.25,format='midi', file_name= file_name)
 
-        # Provide download link for the generated MIDI file
-        audio_file = open(file_name, 'rb')
-        audio_bytes = audio_file.read()
+    # Provide download link for the generated MIDI file
+    audio_file = open(file_name, 'rb')
+    audio_bytes = audio_file.read()
 
-    st.success('Done!')
     st.balloons()
 
     if not st.download_button("Download MIDI File", data=audio_bytes, file_name=file_name):
