@@ -4,6 +4,7 @@ from create_checkbox import create_checkbox
 from insert_temperature import insert_temperature
 from check_checkbox import check_checkbox
 from call_api import call_api
+from user_input_processing import translate_input
 
 url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_467603324-stock-illustration-p-letter-logo-letter-p.jpg'
 
@@ -89,6 +90,23 @@ if st.button("Create Bass Sound"):
     snare_str = ",".join(str(elemento) for elemento in snare)
     charles_str = ",".join(str(elemento) for elemento in charles)
 
+
+    # #generate drums sound as midi
+    # CH_list = charles_str.split(",")
+    # CH_list = [value == "True" for value in CH_list]
+
+    # CK_list = kick_str.split(",")
+    # CK_list = [value == "True" for value in CK_list]
+
+    # SN_list = snare_str.split(",")
+    # SN_list = [value == "True" for value in SN_list]
+
+    # X = [CH_list,CK_list,SN_list]
+
+    # X_mod = translate_input(X)
+    # print(X_mod)
+    # save_melody2()
+
     #call api
     query = call_api(charles_str,kick_str,snare_str,st.session_state["temperature"])
 
@@ -110,6 +128,8 @@ if st.button("Create Bass Sound"):
     st.session_state["Download"] = False
     st.session_state["Download_press"] = False
 
+#this last part of the code, makes the button download persist even through the re runs of the code.
+#after it is press, it will disappear
 if st.session_state["Download"] == False:
     if st.download_button("Download MIDI File", data=st.session_state["audio_bytes"], file_name=st.session_state["file_name"]):
         st.session_state["Download_press"] = True
