@@ -9,7 +9,7 @@ from call_api import call_api
 url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_467603324-stock-illustration-p-letter-logo-letter-p.jpg'
 
 # Mostrar logo
-st.image(url_logo, width=600)
+st.image(url_logo, width=550)
 
 
 col1,col2=st.columns(2)
@@ -24,10 +24,9 @@ with col1:
 
 with col2:
     # Texto más pequeño con estilo personalizado
-    st.markdown("<p style='font-size: 18px;'>Need some inspiration for your music creation?</p>", unsafe_allow_html=True)
-    st.markdown("<p style='font-size: 18px;'>Need a companion to spice up your drum grooves?</p>", unsafe_allow_html=True)
-    st.markdown("<p style='font-size: 18px;'>Sick of your current bass player and want to look for a replacement?</p>", unsafe_allow_html=True)
-
+    st.markdown("<p style='font-size: 18px;'><b>Need some inspiration for your music creation?</b></p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 18px;'><b>Need a companion to spice up your drum grooves?</b></p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 18px;'><b>Sick of your current bass player and want to look for a replacement?</b></p>", unsafe_allow_html=True)
 
 
 
