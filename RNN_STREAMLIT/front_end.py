@@ -1,25 +1,16 @@
-import os
-os.environ['SDL_AUDIODRIVER'] = 'directsound'
-
 import streamlit as st
-import music21 as m21
 from save_melody2 import save_melody2
 from create_checkbox import create_checkbox
 from insert_temperature import insert_temperature
 from check_checkbox import check_checkbox
 from call_api import call_api
-from PIL import Image
 
-# Cambiar el color de fondo a negro usando CSS
-color_fondo = "#000000"  # Color negro en formato hexadecimal
-estilo = f"""
-    <style>
-    body {{
-        background-color: {color_fondo};
-    }}
-    </style>
-"""
-st.markdown(estilo, unsafe_allow_html=True)
+
+url_logo ='https://media2.giphy.com/media/xRYN8w3CKPcv6/giphy.gif?cid=ecf05e47ataqoy877rlderctx8xbcb7mqzsgi8tm8r3ginfd&ep=v1_gifs_search&rid=giphy.gif&ct=g'
+
+
+# Mostrar logo
+st.image(url_logo, width=600)
 
 
 st.header('BassBuddy')
@@ -28,7 +19,7 @@ st.header('BassBuddy')
 '''
 ## Need some inspiration for your music creation?
 ## Need a companion to spice up your drum grooves?
-## Can you not handle your current bass player and are you looking for a replacement?”
+## Sick of your current bass player and want to look for a replacement?”
 
 '''
 
