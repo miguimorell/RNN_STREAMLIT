@@ -12,7 +12,7 @@ from PIL import Image
 
 
 '''
-# BASS-BUDY
+# st.header('BassBuddy')
 '''
 
 '''
@@ -22,12 +22,14 @@ from PIL import Image
 
 '''
 
-image1=Image.open("image1.png")
-# ADD IMAGE LATERAL LEFT
-st.sidebar.image(image1, use_column_width=True)
+# Mostrar una imagen desde una URL
+#url_imagen = 'https://example.com/imagen.png'
+#st.image(url_imagen, use_column_width=True)
 
-# ADD IMAGE LATERAL RIGHT
-#st.sidebar.image('image1.png', use_column_width=True)
+# Mostrar un GIF desde una URL
+url_gif = 'https://i.imgur.com/xwQzRkv.gif'
+st.image(url_gif, use_column_width=True)
+
 
 
 
