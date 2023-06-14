@@ -10,7 +10,7 @@ url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_4676
 
 
 # Mostrar logo
-st.image(url_logo, width=800)
+st.image(url_logo, width=600)
 
 # Texto más pequeño con estilo personalizado
 st.markdown("<p style='font-size: 18px;'>Need some inspiration for your music creation?</p>", unsafe_allow_html=True)
