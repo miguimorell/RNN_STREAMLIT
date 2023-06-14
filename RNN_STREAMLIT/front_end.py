@@ -9,7 +9,7 @@ from call_api import call_api
 url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_467603324-stock-illustration-p-letter-logo-letter-p.jpg'
 
 # Mostrar logo
-st.image(url_logo, width=550)
+st.image(url_logo, width=600)
 
 
 col1,col2=st.columns(2)
@@ -19,7 +19,7 @@ with col1:
     url_gif = 'https://media2.giphy.com/media/xRYN8w3CKPcv6/giphy.gif?cid=ecf05e47ataqoy877rlderctx8xbcb7mqzsgi8tm8r3ginfd&ep=v1_gifs_search&rid=giphy.gif&ct=g'
 
     # Mostrar el GIF con un tamaño reducido
-    st.image(url_gif, width=300)
+    st.image(url_gif, width=250)
 
 
 with col2:
