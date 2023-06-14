@@ -12,7 +12,7 @@ url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_4676
 st.image(url_logo, width=600)
 
 
-col1,col2=st.columns(2)
+col1,col2=st.columns([2,7])
 
 with col1:
     # Mostrar un GIF desde una URL
