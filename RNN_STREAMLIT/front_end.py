@@ -29,12 +29,14 @@ with col2:
         <b>Need some inspiration for your music creation?</b>
     </div>
     """, unsafe_allow_html=True)
+    st.write("---------------------------------------------------------------------------------------------------------------")
 
     st.markdown("""
         <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border: 0px solid black;'>
             <b>Need a companion to spice up your drum grooves?</b>
         </div>
         """, unsafe_allow_html=True)
+    st.write("---------------------------------------------------------------------------------------------------------------")
 
     st.markdown("""
         <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border: 0px solid black;'>
