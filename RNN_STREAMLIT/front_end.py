@@ -10,12 +10,14 @@ from check_checkbox import check_checkbox
 from call_api import call_api
 
 '''
-# Grove-Nator 3000
+# BASS-BUDY
 '''
 
 '''
-## Tired of your friend not being able to play with you?....
-## Do not worry, Grove-Nator3000 arrives to make your life easier...
+## “Need some inspiration for your music creation?
+Need a companion to spice up your drum grooves?
+Can you not handle your current bass player and are you looking for a replacement?”
+
 '''
 
 
