@@ -6,7 +6,7 @@ from check_checkbox import check_checkbox
 from call_api import call_api
 from user_input_processing import translate_input
 
-url_logo ='https://imgur.com/gallery/AEKvHLP'
+url_logo ='https://i.imgur.com/IZxZVtm.png'
 
 if "Download" not in st.session_state:
     st.session_state["Download"] = True
