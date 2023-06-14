@@ -100,6 +100,7 @@ if st.button("Create Bass Sound"):
     audio_bytes = audio_file.read()
 
     st.balloons()
+    st.session_state['Download'] = True
 
-    if not st.download_button("Download MIDI File", data=audio_bytes, file_name=file_name):
-        st.stop()
+if st.download_button("Download MIDI File", data=audio_bytes, file_name=file_name, disabled = st.session_state['Download']):
+    st.session_state['Download'] = False
