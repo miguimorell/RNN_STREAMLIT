@@ -98,12 +98,12 @@ if st.button("Create Bass Sound"):
         bass.append(value)
 
     # Save the melody as a MIDI file
-    file_name = title+'.mid'
-    save_melody2(bass, step_duration=0.25,format='midi', file_name= file_name)
+    st.session_state["file_name"] = title+'.mid'
+    save_melody2(bass, step_duration=0.25,format='midi', file_name= st.session_state["file_name"])
 
     # Provide download link for the generated MIDI file
-    audio_file = open(file_name, 'rb')
-    audio_bytes = audio_file.read()
+    audio_file = open(st.session_state["file_name"], 'rb')
+    st.session_state["audio_bytes"] = audio_file.read()
 
     st.balloons()
 
@@ -111,7 +111,7 @@ if st.button("Create Bass Sound"):
     st.session_state["Download_press"] = False
 
 if st.session_state["Download"] == False:
-    if st.download_button("Download MIDI File", data=audio_bytes, file_name=file_name):
+    if st.download_button("Download MIDI File", data=st.session_state["audio_bytes"], file_name=st.session_state["file_name"]):
         st.session_state["Download_press"] = True
 
 
