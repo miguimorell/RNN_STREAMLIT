@@ -7,6 +7,12 @@ from call_api import call_api
 
 url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_467603324-stock-illustration-p-letter-logo-letter-p.jpg'
 
+if "Download" not in st.session_state:
+    st.session_state["Download"] = True
+
+if "Download_press" not in st.session_state:
+    st.session_state["Download_press"] = False
+
 # Mostrar logo
 st.image(url_logo, width=600)
 
