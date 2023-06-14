@@ -50,7 +50,7 @@ st.write("----------------------------------------------------------------------
 
 sounds_first_block = create_checkbox("**Enter the drums for the first bar:**", "1")
 st.write("---")
-sounds_second_block = create_checkbox("Enter the drums for the second bar:","2")
+sounds_second_block = create_checkbox("**Enter the drums for the second bar:**","2")
 st.write("---")
 #Botton to specify temperature
 st.session_state['temperature']=insert_temperature()
@@ -76,7 +76,7 @@ if st.button("Create Bass Sound"):
     snare=snare_data+snare_data2
     charles=charles_data+charles_data2
 
-    st.session_state['kick'] = kick
+    st.session_state['**kick**'] = kick
     st.session_state['snare'] = snare
     st.session_state['charles'] = charles
 
