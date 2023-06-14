@@ -93,5 +93,5 @@ with column2:
 
 # Columna 3
 with column3:
-    st.image('ruta_de_la_imagen_2', use_column_width=True)
+    st.image(url_gif, use_column_width=True)
     # Otros contenidos de la columna 3
