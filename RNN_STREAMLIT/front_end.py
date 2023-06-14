@@ -21,6 +21,14 @@ from call_api import call_api
 '''
 
 
+# ADD IMAGE LATERAL LEFT
+#st.sidebar.image('ruta_de_la_imagen', use_column_width=True)
+
+# ADD IMAGE LATERAL RIGHT
+#st.sidebar.image('ruta_de_la_imagen', use_column_width=True)
+
+
+
 #List of sounds, block of boxes for the two groups of 16th notes.
 sounds_first_block = create_checkbox("Enter the drums for the first bar:","1")
 st.write("---")
