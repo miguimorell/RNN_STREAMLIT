@@ -6,7 +6,7 @@ from check_checkbox import check_checkbox
 from call_api import call_api
 
 
-url_logo ='https://media2.giphy.com/media/xRYN8w3CKPcv6/giphy.gif?cid=ecf05e47ataqoy877rlderctx8xbcb7mqzsgi8tm8r3ginfd&ep=v1_gifs_search&rid=giphy.gif&ct=g'
+url_logo ='https://i.imgur.com/UrUuryS.jpeg'
 
 
 # Mostrar logo
