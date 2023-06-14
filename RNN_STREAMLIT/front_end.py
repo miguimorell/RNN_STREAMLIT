@@ -10,7 +10,7 @@ url_logo ='https://i.imgur.com/UrUuryS.jpeg'
 
 
 # Mostrar logo
-st.image(url_logo, width=600)
+st.image(url_logo, width=800)
 
 
 st.header('BassBuddy')
