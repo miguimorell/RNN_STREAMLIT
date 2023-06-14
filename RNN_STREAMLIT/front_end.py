@@ -24,9 +24,23 @@ with col1:
 
 with col2:
     # Texto más pequeño con estilo personalizado
-    st.markdown("<p style='font-size: 23px;'><b>Need some inspiration for your music creation?</b></p>", unsafe_allow_html=True)
-    st.markdown("<p style='font-size: 23px;'><b>Need a companion to spice up your drum grooves?</b></p>", unsafe_allow_html=True)
-    st.markdown("<p style='font-size: 23px;'><b>Sick of your current bass player and want to look for a replacement?</b></p>", unsafe_allow_html=True)
+    st.markdown("""
+    <div style='font-size: 23px; width: 200px; height: 100px; display: flex; align-items: center; justify-content: center; text-align: center; border: 1px solid black;'>
+        <b>Need some inspiration for your music creation?</b>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("""
+    <div style='font-size: 23px; width: 200px; height: 100px; display: flex; align-items: center; justify-content: center; text-align: center; border: 1px solid black;'>
+        <b>Need a companion to spice up your drum grooves?</b>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("""
+    <div style='font-size: 23px; width: 200px; height: 100px; display: flex; align-items: center; justify-content: center; text-align: center; border: 1px solid black;'>
+        <b>Sick of your current bass player and want to look for a replacement?</b>
+    </div>
+    """, unsafe_allow_html=True)
 
 
 
