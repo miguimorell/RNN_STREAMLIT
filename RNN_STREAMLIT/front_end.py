@@ -25,19 +25,19 @@ with col1:
 with col2:
     # Texto más pequeño con estilo personalizado
     st.markdown("""
-    <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border: 2px solid black;'>
+    <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border: 0px solid black;'>
         <b>Need some inspiration for your music creation?</b>
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown("""
-        <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border: 2px solid black;'>
+        <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border: 0px solid black;'>
             <b>Need a companion to spice up your drum grooves?</b>
         </div>
         """, unsafe_allow_html=True)
 
     st.markdown("""
-        <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border: 2px solid black;'>
+        <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border: 0px solid black;'>
             <b>Sick of your current bass player and want to look for a replacement?</b>
         </div>
         """, unsafe_allow_html=True)
@@ -76,7 +76,7 @@ if st.button("Create Bass Sound"):
     snare=snare_data+snare_data2
     charles=charles_data+charles_data2
 
-    st.session_state['**kick**'] = kick
+    st.session_state['kick'] = kick
     st.session_state['snare'] = snare
     st.session_state['charles'] = charles
 
