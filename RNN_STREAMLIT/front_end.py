@@ -15,7 +15,7 @@ if "Download_press" not in st.session_state:
     st.session_state["Download_press"] = False
 
 # Mostrar logo
-st.image(url_logo, width=600)
+st.image(url_logo, width=630)
 
 
 col1,col2=st.columns([4,6])
