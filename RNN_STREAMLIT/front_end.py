@@ -10,6 +10,16 @@ from check_checkbox import check_checkbox
 from call_api import call_api
 from PIL import Image
 
+# Cambiar el color de fondo a negro usando CSS
+color_fondo = "#000000"  # Color negro en formato hexadecimal
+estilo = f"""
+    <style>
+    body {{
+        background-color: {color_fondo};
+    }}
+    </style>
+"""
+st.markdown(estilo, unsafe_allow_html=True)
 
 
 st.header('BassBuddy')
