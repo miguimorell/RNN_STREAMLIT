@@ -6,16 +6,7 @@ from check_checkbox import check_checkbox
 from call_api import call_api
 
 
-url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_467603324-stock-illustration-p-letter-logo-letter-p.jpg'
 
-
-# Mostrar logo
-st.image(url_logo, width=600)
-
-# Texto más pequeño con estilo personalizado
-st.markdown("<p style='font-size: 18px;'>Need some inspiration for your music creation?</p>", unsafe_allow_html=True)
-st.markdown("<p style='font-size: 18px;'>Need a companion to spice up your drum grooves?</p>", unsafe_allow_html=True)
-st.markdown("<p style='font-size: 18px;'>Sick of your current bass player and want to look for a replacement?</p>", unsafe_allow_html=True)
 
 
 
@@ -33,6 +24,18 @@ with column1:
 
 # Columna 2
 with column2:
+    url_logo ='https://st2.depositphotos.com/15317184/46760/v/600/depositphotos_467603324-stock-illustration-p-letter-logo-letter-p.jpg'
+
+
+# Mostrar logo
+    st.image(url_logo, width=600)
+
+    # Texto más pequeño con estilo personalizado
+    st.markdown("<p style='font-size: 18px;'>Need some inspiration for your music creation?</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 18px;'>Need a companion to spice up your drum grooves?</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 18px;'>Sick of your current bass player and want to look for a replacement?</p>", unsafe_allow_html=True)
+
+
     #List of sounds, block of boxes for the two groups of 16th notes.
     sounds_first_block = create_checkbox("Enter the drums for the first bar:","1")
     st.write("---")
