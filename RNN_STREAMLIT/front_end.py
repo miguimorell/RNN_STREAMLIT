@@ -137,3 +137,5 @@ if st.session_state["Download"] == False:
 
 if st.session_state['Download_press'] == True:
     st.session_state['Download'] = True
+    url_gif_end="http://www.foxadhd.com/"
+    st.image(url_gif_end, width=670)
