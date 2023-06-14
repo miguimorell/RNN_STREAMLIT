@@ -27,7 +27,7 @@ from PIL import Image
 #st.image(url_imagen, use_column_width=True)
 
 # Mostrar un GIF desde una URL
-url_gif = 'https://i.imgur.com/xwQzRkv.gif'
+url_gif = 'https://media2.giphy.com/media/xRYN8w3CKPcv6/giphy.gif?cid=ecf05e47ataqoy877rlderctx8xbcb7mqzsgi8tm8r3ginfd&ep=v1_gifs_search&rid=giphy.gif&ct=g'
 st.image(url_gif, use_column_width=True)
 
 
