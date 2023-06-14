@@ -8,7 +8,7 @@ def call_api(charles_str,kick_str,snare_str,temperature):
     url="https://rnnmusicgenerator-pdjk6hbk2a-ew.a.run.app/predict"
     params={"CH":charles_str,"CK":kick_str,"SN":snare_str,"T":temperature}
 
-    with st.spinner('Creating Music...'):
+    with st.spinner('Composing Bass Sound...'):
         query=requests.get(url,params).json()
     st.success('Done!')
 
