@@ -104,7 +104,9 @@ if st.button("Create Bass Sound"):
     st.session_state["Download"] = False
 
     if st.session_state["Download"] == False:
-        st.download_button("Download MIDI File", data=audio_bytes, file_name=file_name)
+        if st.download_button("Download MIDI File", data=audio_bytes, file_name=file_name):
+            st.session_state["Download_press"] = True
 
 
-    st.session_state['Download'] = True
+    if st.session_state['Download_press'] == True:
+        st.session_state['Download'] = True
