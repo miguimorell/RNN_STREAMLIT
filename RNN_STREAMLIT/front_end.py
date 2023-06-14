@@ -12,12 +12,12 @@ url_logo ='https://i.imgur.com/UrUuryS.jpeg'
 # Mostrar logo
 st.image(url_logo, width=800)
 
+# Texto más pequeño con estilo personalizado
+st.markdown("<p style='font-size: 14px;'>Need some inspiration for your music creation?</p>", unsafe_allow_html=True)
+st.markdown("<p style='font-size: 14px;'>Need a companion to spice up your drum grooves?</p>", unsafe_allow_html=True)
+st.markdown("<p style='font-size: 14px;'>Sick of your current bass player and want to look for a replacement?</p>", unsafe_allow_html=True)
 
-'''
-## Need some inspiration for your music creation?
-## Need a companion to spice up your drum grooves?
-## Sick of your current bass player and want to look for a replacement?”
-'''
+
 
 # Mostrar una imagen desde una URL
 #url_imagen = 'https://example.com/imagen.png'
