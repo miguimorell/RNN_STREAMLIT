@@ -65,4 +65,9 @@ if st.button("Create Bass Sound"):
 
     # Save the melody as a MIDI file
     file_name = title+'.mid'
-    stream=save_melody2(bass, step_duration=0.25,format='midi', file_name= file_name)
+    save_melody2(bass, step_duration=0.25,format='midi', file_name= file_name)
+
+    # Provide download link for the generated MIDI file
+    audio_file = open(file_name, 'rb')
+    audio_bytes = audio_file.read()
+    st.download_button("Download MIDI File", data=audio_bytes, file_name=file_name)

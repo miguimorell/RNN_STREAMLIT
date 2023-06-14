@@ -1,6 +1,6 @@
 import music21 as m21
 
-def save_melody2(melody, step_duration=0.25, format='midi', file_name='./test.mid'):
+def save_melody2(melody, step_duration=0.25, format='midi', file_name='test.mid'):
     stream = m21.stream.Stream()
     start_symbol = None
     step_counter = 1
@@ -23,4 +23,4 @@ def save_melody2(melody, step_duration=0.25, format='midi', file_name='./test.mi
             step_counter += 1
 
     stream.write(format, fp=file_name)
-    return stream
+    #return stream
