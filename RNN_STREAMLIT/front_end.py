@@ -14,9 +14,9 @@ from call_api import call_api
 '''
 
 '''
-## “Need some inspiration for your music creation?
-Need a companion to spice up your drum grooves?
-Can you not handle your current bass player and are you looking for a replacement?”
+## Need some inspiration for your music creation?
+## Need a companion to spice up your drum grooves?
+## Can you not handle your current bass player and are you looking for a replacement?”
 
 '''
 
