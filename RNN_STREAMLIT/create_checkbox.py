@@ -22,7 +22,7 @@ def create_checkbox(text, key):
 
         for i, col in enumerate(cols):
             if contador[i].isdigit():
-                col.markdown(f"<p style='color:red'>{contador[i]}</p>", unsafe_allow_html=True)
+                col.markdown(f"<p style='color:#FF6666'>{contador[i]}</p>", unsafe_allow_html=True)
             else:
                 col.write(contador[i])
             checkbox = col.checkbox(f' {contador[i]}', key="".join([str(i) + key, sound_name]))
