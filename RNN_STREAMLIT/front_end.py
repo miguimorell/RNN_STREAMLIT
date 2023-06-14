@@ -13,14 +13,10 @@ url_logo ='https://i.imgur.com/UrUuryS.jpeg'
 st.image(url_logo, width=800)
 
 
-st.header('BassBuddy')
-
-
 '''
 ## Need some inspiration for your music creation?
 ## Need a companion to spice up your drum grooves?
 ## Sick of your current bass player and want to look for a replacement?”
-
 '''
 
 # Mostrar una imagen desde una URL
