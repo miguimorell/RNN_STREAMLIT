@@ -62,7 +62,7 @@ with col2:
 
 
     st.markdown("""
-        <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border-top: 2px solid black; border-bottom: 2px solid white;'>
+        <div style='font-size: 23px; width: 400px; height: 81px; display: flex; align-items: center; justify-content: center; text-align: center; border-top: 2px solid white; border-bottom: 2px solid white;'>
             <b>Need a companion to spice up your drum grooves?</b>
         </div>
         """, unsafe_allow_html=True)
