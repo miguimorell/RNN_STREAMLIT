@@ -25,7 +25,7 @@ def create_checkbox(text, key):
                 col.markdown(f"<p style='color:#FF6666'>{contador[i]}</p>", unsafe_allow_html=True)
             else:
                 col.write(contador[i])
-            checkbox = col.checkbox(f' {contador[i]}', key="".join([str(i) + key, sound_name]))
+            checkbox = col.checkbox('|', key="".join([str(i) + key, sound_name]))
             sound_list.append(checkbox)
 
     return sounds

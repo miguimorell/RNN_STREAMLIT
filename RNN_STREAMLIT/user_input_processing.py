@@ -6,24 +6,23 @@ def translate_input(user_input):
     send_charles_data = []
     for lista, sound in enumerate(user_input):
         for index, data in enumerate(sound):
-            if lista == 0:
+            if lista == 1:
                 if data == True:
                     send_kick_data.append("36")
                 else:
                     send_kick_data.append("r")
-            elif lista == 1:
+            elif lista == 2:
                 if data == True:
                     send_snare_data.append("38")
                 else:
                     send_snare_data.append("r")
-            elif lista == 2:
+            elif lista == 0:
                 if data == True:
                     send_charles_data.append("42")
                 else:
                     send_charles_data.append("r")
 
-    user_input = [send_kick_data, send_snare_data, send_charles_data]
-
+    user_input = [send_charles_data,send_kick_data, send_snare_data]
 
     #Create underscores"_"
     modified_input = []
