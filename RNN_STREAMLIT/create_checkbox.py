@@ -23,9 +23,16 @@ def create_checkbox(text, key):
         for i, col in enumerate(cols):
             if contador[i].isdigit():
                 col.markdown(f"<p style='color:#FF6666'>{contador[i]}</p>", unsafe_allow_html=True)
+            elif contador[i] == "&":
+                col.markdown(f"<p style='color:#FFFF00'>{contador[i]}</p>", unsafe_allow_html=True)
             else:
                 col.write(contador[i])
-            checkbox = col.checkbox('|', key="".join([str(i) + key, sound_name]))
+
+            if i == 15:
+                checkbox = col.checkbox('', key="".join([str(i) + key, sound_name]))
+            else:
+                checkbox = col.checkbox('|', key="".join([str(i) + key, sound_name]))
+
             sound_list.append(checkbox)
 
     return sounds
